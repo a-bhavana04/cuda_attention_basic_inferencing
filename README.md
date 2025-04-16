@@ -1,12 +1,16 @@
-This project is a simple exploration of CUDA to accelerate a basic attention mechanism in PyTorch.
+This project is a basic exploration of using CUDA to accelerate a simple attention mechanism in PyTorch.
 
 The attention mechanism computes the similarity between queries (Q) and keys (K), applies a softmax to the similarity scores to obtain weights, and uses these weights to compute a weighted sum of values (V). The formula is:
 
 \[
-\text{scores} = \frac{QK^T}{\sqrt{d}} \quad \text{(scaled dot-product attention)}
+\text{scores} = \frac{QK^T}{\sqrt{d}}
 \]
 
-Where \(d\) is the dimensionality of the key vectors, and softmax is applied to the scores to get the attention weights.
+Where:
+- \(Q\) is the query matrix
+- \(K\) is the key matrix
+- \(d\) is the dimensionality of the key vectors
+- Softmax is applied to the scores to get the attention weights, which are then multiplied by the value matrix \(V\).
 
 | Metric           | CPU                  | GPU                 |
 |------------------|----------------------|---------------------|
@@ -14,4 +18,4 @@ Where \(d\) is the dimensionality of the key vectors, and softmax is applied to 
 | **Throughput**   | 1478.94 samples/sec  | 3593.63 samples/sec |
 | **Memory Used**  | N/A                  | 1672.12 MB          |
 
-While the GPU is about **2x faster** than the CPU, this is more of an experiment to familiarize myself with CUDA, and it’s clear that the GPU handles this basic task better. It also uses more memory, but that’s expected for the performance boost.
+The GPU performs over **2x better** than the CPU, as expected. This improvement comes with the tradeoff of higher memory usage, but that’s typical for a performance gain with GPU acceleration in such operations.
