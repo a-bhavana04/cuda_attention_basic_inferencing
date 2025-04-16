@@ -3,7 +3,9 @@ This project is an exploration of using CUDA to accelerate a basic attention mec
 The attention mechanism computes the similarity between queries (Q) and keys (K), applies a softmax to the similarity scores to obtain weights, and uses these weights to compute a weighted sum of values (V). The formula is:
 
 ```latex
+[
 \text{scores} = \frac{QK^T}{\sqrt{d}}
+]
 ```
 
 Where:
