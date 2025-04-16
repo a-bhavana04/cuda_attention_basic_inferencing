@@ -1,9 +1,8 @@
 This project is an exploration of using CUDA to accelerate a basic attention mechanism in PyTorch.
 
 The attention mechanism computes the similarity between queries (Q) and keys (K), applies a softmax to the similarity scores to obtain weights, and uses these weights to compute a weighted sum of values (V). The formula is: 
-```
-scores = QK^T / sqrt(d)
-```
+`scores = QK^T / sqrt(d)
+`
 Where:
 - \( Q \) is the query matrix
 - \( K \) is the key matrix
